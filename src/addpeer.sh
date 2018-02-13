@@ -5,6 +5,9 @@ set -e
 private_key=$(wg genkey)
 public_key=$(echo $private_key | wg pubkey)
 
+# Get next available IP for client (temporary dirty hack until we can implement something better)
+client_ip=$(all="$(wg show wg0 allowed-ips)"; for ((i=2; i<=254; i++)); do ip="10.200.200.$i"; [[ $all != *$ip/32* ]] && echo $ip && break; done)
+
 # Add keys to server
 wg set wg0 peer $public_key allowed-ips $client_ip/32
 
