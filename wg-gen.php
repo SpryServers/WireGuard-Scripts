@@ -1,3 +1,3 @@
 <?php
-exec('wg_php_root');
+exec('/opt/wg-spry/wg_php_root');
 ?>
