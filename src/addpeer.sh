@@ -9,7 +9,7 @@ public_key=$(echo $private_key | wg pubkey)
 wg set wg0 peer $public_key allowed-ips $client_ip/32
 
 # Generate client config
-cat > spry-wg-us-tx1.conf << _EOF
+cat > /opt/wg-spry/generated/spry-wg-us-tx1.conf << _EOF
 [Interface]
 PrivateKey = $private_key
 Address = $client_ip/32
