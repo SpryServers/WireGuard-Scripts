@@ -8,7 +8,7 @@ gcc src/wrapper.c -o $install_dir/wg_php_root
 chown root $install_dir/wg_php_root
 chmod u=rwx,go=xr,+s $install_dir/wg_php_root
 
-cp src/addpeer.sh $install_dir/
+cp -R src/addpeer.sh $install_dir/
 chown root $install_dir/addpeer.sh
 chmod u=rwx,go=xr $install_dir/addpeer.sh
 
