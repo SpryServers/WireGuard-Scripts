@@ -17,3 +17,6 @@ Fully automate WireGuard server provisioning and client configuration generation
 
 ## Todo
 1. Alot. I'll update this later.
+
+---------------------------------
+*WireGuard <https://www.wireguard.com> is licensed under the GPL2, copyright Jason A. Donenfeld <Jason@zx2c4.com>
