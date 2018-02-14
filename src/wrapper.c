@@ -12,7 +12,7 @@
       *          arbitary commands if not.
       * */
 
-     system ("/bin/sh /opt/wg-spry/addpeer.sh");
+     execlp("/bin/bash","bash", "/opt/wg-provision/addpeer.sh",(char *)NULL);
 
      return 0;
    }
