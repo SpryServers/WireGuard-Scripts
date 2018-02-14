@@ -12,7 +12,7 @@ client_ip=$(all="$(wg show wg0 allowed-ips)"; for ((i=2; i<=254; i++)); do ip="1
 wg set wg0 peer $public_key allowed-ips $client_ip/32
 
 # Generate client config
-cat > /opt/wg-provision/generated/spry-wg-us-tx1-$client_ip.conf << _EOF
+umask u=rwx,g=rwx,o= && cat > /opt/wg-provision/generated/spry-wg-us-tx1-$client_ip.conf << _EOF
 [Interface]
 PrivateKey = $private_key
 Address = $client_ip/32
