@@ -21,16 +21,10 @@
 install_dir=/opt/wg-provision
 useradd  wg-provision;
 
-mkdir -p $install_dir
-mkdir -p $install_dir/generated
+mkdir -p $install_dir;
+mkdir $install_dir/generated;
 
-chown -R root:wg-provision $install_dir
+cp -R src/* $install_dir/
 
-gcc src/wrapper.c -o $install_dir/wg-provision
-
-chown root:wg-provision $install_dir/wg-provision
-chmod u=rwx,g=xr,o=r,+s $install_dir/wg-provision
-
-cp -R src/addpeer.sh $install_dir/
-chown root:root $install_dir/*.sh
-chmod u=rwx,go=xr $install_dir/*.sh
+chown -R root:root $install_dir
+chmod u=rwx,g=xr,o= $install_dir/*.sh
